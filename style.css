@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Oxanium", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 body{
     width: 100vw;
@@ -188,8 +191,84 @@ img {
         filter: drop-shadow(-20px -20px 20px hsla(0, 0%, 100%, 0.452));
     }
 } 
-footer{
+.pk{
+    color: #ccc;
+}
+h1{
+    color: #fff;
+    font-size: 4rem;
+}
+.qk{
+    color: #cccccc71;
+    font-size: 20px;
+}
+.btn{
+    color: #fff;
+    text-decoration: none;
+    width: 30px;
+    padding: 10px 10px;
+    border: 2px solid #fff;
+    position: relative;
+    top: 30px;
+    animation: btn 1s ease-in-out 0s infinite;
+}
+@keyframes btn {
+    from{
+            box-shadow: 0 0 5px #ccc,
+                        0 0 5px #fff,
+                        0 0 5px #fff,
+                        0 0 5px #fff,
+                        0 0 5px #fff,
+                        0 0 5px #fff;
+        perspective: 20px;
+        }
+        to{
+            box-shadow: 0 0 5px #ccc,
+                        0 0 5px #fff,
+                        0 0 5px #fff,
+                        0 0 5px #fff,
+                        0 0 5px #fff,
+                        0 0 5px #fff;
+            perspective: 0;
+        }
+    }
+
+/* footer{
     background-color: #0e0d0dfd;
     grid-area: footer;
-    height: 20vh;
+    height: 40vh;
+    position: static;
+    transform-style: preserve-3d;
+    transform: skewY(1deg) translateY(3px) sKewX(4deg);
+} */
+footer {
+    /* Change the background color to your desired color */
+    background-color: #0e0d0dfd;
+
+    /* Change the grid area to your desired grid area */
+    grid-area: footer;
+
+    /* Change the height to your desired height */
+    height: 60vh;
+
+    /* Change the position to your desired position */
+    position: relative;
+
+    /* Change the transform style to your desired transform style */
+    transform-style: flat;
+
+    /* Change the transform to your desired transform */
+    transform: skewY(2deg) translateY(5px) skewX(3deg);
+}
+
+@keyframes glur {
+    0% {
+        box-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000, 0 0 25px #000;
+    }
+    50% {
+        box-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000;
+    }
+    100% {
+        box-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000, 0 0 25px #000;
+    }
 }
