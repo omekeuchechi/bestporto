@@ -11,7 +11,7 @@ body{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    background-color: black;
+    background-color: #0e0d0dfd;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -29,6 +29,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 0 17px black;
 }
 .logo{
     font-size: 20px;
@@ -136,6 +137,7 @@ li a:hover{
 
 }
 
+
 main{
     background-color: #0e0d0dfd;
     grid-area: main;
@@ -174,6 +176,7 @@ main{
 img {
     position: relative;
     right: -70px;
+    border-radius: 20px;
     animation-name: glur;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -210,10 +213,11 @@ h1{
     border: 2px solid #fff;
     position: relative;
     top: 30px;
-    animation: btn 1s ease-in-out 0s infinite;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    animation: btn 2s ease-in-out 1s infinite;
 }
 @keyframes btn {
-    from{
+    0%{
             box-shadow: 0 0 5px #ccc,
                         0 0 5px #fff,
                         0 0 5px #fff,
@@ -222,14 +226,32 @@ h1{
                         0 0 5px #fff;
         perspective: 20px;
         }
-        to{
+        40%{
             box-shadow: 0 0 5px #ccc,
-                        0 0 5px #fff,
-                        0 0 5px #fff,
-                        0 0 5px #fff,
-                        0 0 5px #fff,
-                        0 0 5px #fff;
-            perspective: 0;
+                        0 0 5px #ccc,
+                        0 0 5px #ccc,
+                        0 0 5px #ccc,
+                        0 0 5px #ccc,
+                        0 0 5px #ccc;
+            perspective: 2px;
+        }
+        50%{
+            box-shadow: 0 0 5px #000,
+                        0 0 5px #000,
+                        0 0 5px #000,
+                        0 0 5px #000,
+                        0 0 5px #000,
+                        0 0 5px #000;
+            perspective: 60px;
+        }
+        100%{
+            box-shadow: 0 0 5px #ccc,
+                        0 0 5px #ccc,
+                        0 0 5px #ccc,
+                        0 0 5px #ccc,
+                        0 0 5px #ccc,
+                        0 0 5px #ccc;
+            perspective: 100px;
         }
     }
 
@@ -258,7 +280,49 @@ footer {
     transform-style: flat;
 
     /* Change the transform to your desired transform */
-    transform: skewY(2deg) translateY(5px) skewX(3deg);
+    transform: skewY(2deg) translateY(10px) /*skewX(2deg)*/;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    border-top: 3px solid black;
+}
+.cicleicon{
+    background: blue;
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
+    position: relative;
+    left: 830px;
+    top: 200px;
+}
+.cicleicon:hover{
+    animation: glur 1s ease-in-out 0s  both;
+}
+
+.cicleicon .fa-thumbs-up{
+    color: #fff;
+    font-size: 3rem;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+h2{
+    text-align: center;
+    position: relative;
+    font-size: 4rch;
+    top: 230px;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
+}
+.icon{
+    text-align: center;
+    position: relative;
+    font-size: 1.7rch;
+    top: 260px;
+    color: #ccc;
+}
+.rt{
+    display: none;
 }
 
 @keyframes glur {
@@ -270,5 +334,170 @@ footer {
     }
     100% {
         box-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000, 0 0 25px #000;
+    }
+}
+/* .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+} */
+@media(max-width: 640px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: .5fr 1.2fr .5fr 1fr .5fr;
+        grid-template-areas: 'nav'
+                              'main'
+                              'main'
+                              'main'
+                              'footer';
+    }
+    .nav{
+        grid-area: nav;
+        background-color: #0e0d0dfd;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fa-bars{
+        position: relative;
+        left: -14px;
+        top: 4px;
+        color: #fff;
+        font-size: 2.3rem;
+        font-weight: 700;
+        z-index: 2;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: /*#2c3e50*/ hsla(0, 2%, 25%, 0.884);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .logo{
+        font-size: 14px;
+        font-weight: 600;
+        position: relative;
+        color: #fff;
+        cursor: pointer;
+        left: -100px;
+        /* width: 200px; */
+        padding-left: 7px;
+        /* margin-right: 100px; */
+    }
+    li{
+        list-style: none;
+        text-decoration: none;
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked ~ ul{
+        left: 0;
+        z-index: 3;
+    }
+    #check:hover ~ ul{
+        left: 0;
+        z-index: 3;
+    }
+    #check{
+        width: 20px;
+        position: relative;
+        align-self: center;
+        visibility: hidden;
+    }
+    svg{
+        width: 40%;
+        margin-left: 20px;
+    }
+    main{
+        grid-area: main;
+        height: 100vh;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    .box1{
+        position: relative;
+        left: 15px;
+        top: 360px;
+    }
+    img {
+        position: relative;
+        right: -80px;
+        top: -350px;
+        border-radius: 380px;
+        height: 40%;
+        width: 60%;
+        z-index: 2;
+    }
+    footer {
+        /* Change the background color to your desired color */
+        background-color: #0e0d0dfd;
+    
+        /* Change the grid area to your desired grid area */
+        grid-area: footer;
+    
+        /* Change the height to your desired height */
+        height: 20vh;
+    
+        /* Change the position to your desired position */
+        position: relative;
+    
+        /* Change the transform style to your desired transform style */
+        transform-style: flat;
+    
+        /* Change the transform to your desired transform */
+        transform: skewY(3deg) translateY(0px) /*skewX(2deg)*/;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        border-top: 3px solid black;
+    }
+    .cicleicon{
+        background: blue;
+        width: 100px;
+        height: 100px;
+        border-radius: 60px;
+        position: relative;
+        left: 200px;
+        top: 200px;
+    }
+    .icon{
+        text-align: right;
+        position: relative;
+        font-size: 1.7rch;
+        top: 200px;
+        color: #ccc;
+    }
+    .rt{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 260px;
+        left: 180px;
+    }
+    .rt .fa-thumbs-up,.fa-eye,.fa-wechat{
+        color: #fff;
+        margin-left: 10px;
+    }
+    p{
+        color: #fff;
     }
 }
