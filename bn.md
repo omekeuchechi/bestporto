@@ -1,0 +1,1 @@
+if the age is a perfect square
