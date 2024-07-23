@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    display: grid;
+    align-content: end;
+    justify-content: end;
+    min-height: 100vh;
+    background: #e8e8e8;
+    padding: 50px;
+}
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #141414;
+    border-radius: 10px;
+}
+footer .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+footer .container .sec h2{
+    position: relative;
+    color: #2292bb;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+footer .container .sec p{
+    color: #bfb2b2;
+}
+footer .container .sci{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+}
+footer .container .sci li{
+    list-style: none;
+}
+footer .container .sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    background: #17a0bb;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+footer .container .sci li a i{
+    color: #fff;
+    font-size: 20px;
+}
+footer .container .sci li a:hover{
+    transform: translateY(-12px);
+    transition: 0.5s;
+}
+footer .container .quicklinks{
+    position: relative;
+}
+footer .container .quicklinks ul li{
+    list-style: none;
+}
+footer .container .quicklinks ul li a{
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+footer .container .contact .info{
+    position: relative;
+}
+footer .container .contact .info li{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+footer .container .contact .info li span{
+    font-size: 20px;
+    color: #17a0bb;
+}
+footer .container .contact .info li a{
+    text-decoration: none;
+    color: #bfb2b2;
+}
+.copyrightText{
+    width: 100%;
+    background: #fff;
+    padding: 20px 100px 30px;
+    text-align: center;
+}
+.copyrightText p{
+    font-size: 1.2rem;
+    font-weight: 400px;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 40px;
+    }
+    footer .container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 20px;
+    }
+    .copyrightText{
+        padding: 20px 20px 40px;
+    }
+}
+@media (max-width: 768px){
+    footer .container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 20px;
+    }
+}

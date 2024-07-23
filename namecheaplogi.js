@@ -10,7 +10,7 @@ display.addEventListener("click", ()=>{
     // }, 20000);
 })
 
-display.addEventListener("focus", ()=>{
+display.addEventListener("mouseover", ()=>{
     document.getElementById("form").style.visibility = "visible";
     document.getElementById("form").style.display = "block";
     // setInterval(() => {

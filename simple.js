@@ -4,3 +4,48 @@ var typed6 = new Typed('#typed6', {
     backSpeed: 0,
     loop: true
   });
+  test('Prompt works with special characters', () => {
+    let answer = '';
+    while (answer.toLowerCase() !== 'yes' && answer.toLowerCase() !== 'yeah') {
+        answer = prompt('Are you there yet?');
+    }
+    expect(answer.toLowerCase()).toBe('yes') || expect(answer.toLowerCase()).toBe('yeah');
+});
+
+test('Prompt works with uppercase "YES"', () => {
+    let answer = '';
+    while (answer.toLowerCase() !== 'yes' && answer.toLowerCase() !== 'yeah') {
+        answer = prompt('Are you there yet?');
+    }
+    answer = prompt('Are you there yet?', 'YES');
+    expect(answer.toLowerCase()).toBe('yes') || expect(answer.toLowerCase()).toBe('yeah');
+});
+
+test('Prompt works with uppercase "YEAH"', () => {
+    let answer = '';
+    while (answer.toLowerCase() !== 'yes' && answer.toLowerCase() !== 'yeah') {
+        answer = prompt('Are you there yet?');
+    }
+    answer = prompt('Are you there yet?', 'YEAH');
+    expect(answer.toLowerCase()).toBe('yes') || expect(answer.toLowerCase()).toBe('yeah');
+});
+
+// Test case 4: Check if the prompt works with a string containing lowercase 'yes'
+test('Prompt works with lowercase "yes"', () => {
+    let answer = '';
+    while (answer.toLowerCase() !== 'yes' && answer.toLowerCase() !== 'yeah') {
+        answer = prompt('Are you there yet?');
+    }
+    answer = prompt('Are you there yet?', 'yes');
+    expect(answer.toLowerCase()).toBe('yes') || expect(answer.toLowerCase()).toBe('yeah');
+});
+
+// Test case 5: Check if the prompt works with a string containing lowercase 'yeah'
+test('Prompt works with lowercase "yeah"', () => {
+    let answer = '';
+    while (answer.toLowerCase() !== 'yes' && answer.toLowerCase() !== 'yeah') {
+        answer = prompt('Are you there yet?');
+    }
+    answer = prompt('Are you there yet?', 'yeah');
+    expect(answer.toLowerCase()).toBe('yes') || expect(answer.toLowerCase()).toBe('yeah');
+});

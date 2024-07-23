@@ -39,16 +39,28 @@
                         <input type="text" name="username" placeholder="Username" class="uname" required>
                         <input type="password" name="Password" placeholder="password" class="pword" required>
                         <input type="submit" value="Sign In" id="submit">
+                        <a href="#" class="forget">Forgot your password?</a>
                     </form>
                 </li>
                 <li><a href="#">SIGN UP</a></li>
             </ul>
 
             <ul class="ul">
-                <li><a href="#">
+                <li id="list3"><a href="#">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> 
                     <i class="fa fa-sort-down" aria-hidden="true" style="position: relative; top: -6px; font-size: 0.85rem;"></i>
-                </a></li>
+                </a>
+                    <div class="cart">
+                        <div class="cart-title"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Your Cart</div>
+                        <div class="cart-body">
+                            <p class="sub">Subtotal</p>
+                            <span class="amt">
+                                $0.00
+                            </span>
+                        </div>
+                        <a href="" type="button" id="view-cart">View Cart</a>
+                    </div>
+                </li>
                 <li><a href="#">USD</a></li>
                 <li><a href="https://www.google.com/search?q=freepic&oq=freepic&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTE0MTM5ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"><i class="fa fa-search" aria-hidden="true"></i></a></li>
             </ul>
@@ -96,6 +108,7 @@
         function set() {
             $("#form").hide(1000)
         }
+        
       </script>
 </body>
 </html>
